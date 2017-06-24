@@ -37,4 +37,5 @@ export class PolicyComponent {
 
   ngOnDestroy() {
     this.sub.unsubscribe();
-  }}
+  }
+}

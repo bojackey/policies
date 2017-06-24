@@ -1,15 +1,4 @@
 ﻿
-export interface PrimaryInsured {
-  givenName: string;
-  familyName: string;
-  streetAddress: string;
-  city: string;
-  state: string;
-  zip: string;
-}
-
-//public get name(): string { return `${this.givenName} ${this.familyName}` };
-
 export enum Construction {
   Unknown,
   SiteBuiltHome,
@@ -29,13 +18,20 @@ export class Risk {
   public constructionName: string;
 }
 
-export interface Policy {
+export class PrimaryInsured {
+  public givenName: string;
+  public familyName: string;
+  public streetAddress: string;
+  public city: string;
+  public state: string;
+  public zip: string;
+}
 
-  policyNumber: number;
-  effectiveDate: Date;
-  expirationDate: Date;
+export class Policy {
+  public policyNumber: number;
+  public effectiveDate: Date;
+  public expirationDate: Date;
 
-  primaryInsured: PrimaryInsured;
-  risk: Risk;
-
+  public primaryInsured: PrimaryInsured;
+  public risk: Risk;
 }

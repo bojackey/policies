@@ -28,6 +28,12 @@ export class PolicyService {
       .catch(this.handleError);
   }
 
+  putPolicy(policy: Policy): Promise<any> {
+    return this.http.post(this.url, policy)
+      .toPromise()
+      .catch(this.handleError);
+  }
+
   private handleError(error: Response | any) {
     // In a real world app, you might use a remote logging infrastructure
     let errMsg: string;

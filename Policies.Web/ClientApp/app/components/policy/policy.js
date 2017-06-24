@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-//public get name(): string { return `${this.givenName} ${this.familyName}` };
 var Construction;
 (function (Construction) {
     Construction[Construction["Unknown"] = 0] = "Unknown";
@@ -16,4 +15,16 @@ var Risk = (function () {
     return Risk;
 }());
 exports.Risk = Risk;
+var PrimaryInsured = (function () {
+    function PrimaryInsured() {
+    }
+    return PrimaryInsured;
+}());
+exports.PrimaryInsured = PrimaryInsured;
+var Policy = (function () {
+    function Policy() {
+    }
+    return Policy;
+}());
+exports.Policy = Policy;
 //# sourceMappingURL=policy.js.map

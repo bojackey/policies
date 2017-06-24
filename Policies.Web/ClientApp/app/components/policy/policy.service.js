@@ -35,6 +35,11 @@ var PolicyService = (function () {
             .toPromise()
             .catch(this.handleError);
     };
+    PolicyService.prototype.putPolicy = function (policy) {
+        return this.http.post(this.url, policy)
+            .toPromise()
+            .catch(this.handleError);
+    };
     PolicyService.prototype.handleError = function (error) {
         // In a real world app, you might use a remote logging infrastructure
         var errMsg;
