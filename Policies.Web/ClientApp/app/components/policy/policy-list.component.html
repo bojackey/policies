@@ -3,6 +3,12 @@
     All Policies
   </div>
   <div class="panel-body">
-    ....
+    {{policies?.length}} policies
+    <ul>
+      <li>policyNumber primaryInsured effectiveDate </li>
+      <li *ngFor="let policy of policies">
+      {{policy?.policyNumber}} {{policy?.primaryInsured.familyName}} {{policy?.effectiveDate}} {{policy?.expirationDate}}
+      </li>
+    </ul>
   </div>
 </div>

@@ -3,8 +3,9 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './components/app/app.component'
 import { HomeComponent } from './components/home/home.component';
-import { PolicyComponent } from './components/policy/policy.component';
-import { PolicyListComponent } from './components/policy/policy-list.component';
+import { PolicyComponent }      from './components/policy/policy.component';
+import { PolicyListComponent }  from './components/policy/policy-list.component';
+import { PolicyService }        from './components/policy/policy.service';
 
 export const sharedConfig: NgModule = {
   bootstrap: [AppComponent],
@@ -13,6 +14,10 @@ export const sharedConfig: NgModule = {
     HomeComponent,
     PolicyComponent,
     PolicyListComponent
+  ],
+  providers:
+  [
+    PolicyService
   ],
   imports: [
     RouterModule.forRoot([
