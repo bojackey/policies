@@ -22,7 +22,7 @@ exports.sharedConfig = {
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: home_component_1.HomeComponent },
             { path: 'policies', component: policy_list_component_1.PolicyListComponent },
-            { path: 'policy', component: policy_component_1.PolicyComponent },
+            { path: 'policy/:id', component: policy_component_1.PolicyComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]

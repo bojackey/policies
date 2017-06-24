@@ -11,18 +11,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var policy_service_1 = require("./policy.service");
+var router_1 = require("@angular/router");
 var PolicyComponent = (function () {
-    function PolicyComponent(policyService) {
+    function PolicyComponent(policyService, route) {
         this.policyService = policyService;
-        this.getPolicy();
+        this.route = route;
     }
-    PolicyComponent.prototype.getPolicy = function () {
+    PolicyComponent.prototype.getPolicy = function (id) {
         var _this = this;
-        this.policyService.getPolicy("1")
+        this.policyService.getPolicy(id)
             .then(function (policy) {
             _this.policy = policy;
         })
             .catch(function (error) { return console.error(error); });
+    };
+    PolicyComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.sub = this.route.params.subscribe(function (params) {
+            _this.id = +params['id']; // (+) converts string 'id' to a number
+            _this.getPolicy(_this.id);
+        });
+    };
+    PolicyComponent.prototype.ngOnDestroy = function () {
+        this.sub.unsubscribe();
     };
     return PolicyComponent;
 }());
@@ -32,7 +43,7 @@ PolicyComponent = __decorate([
         template: require('./policy.component.html'),
         providers: [policy_service_1.PolicyService]
     }),
-    __metadata("design:paramtypes", [policy_service_1.PolicyService])
+    __metadata("design:paramtypes", [policy_service_1.PolicyService, router_1.ActivatedRoute])
 ], PolicyComponent);
 exports.PolicyComponent = PolicyComponent;
 //# sourceMappingURL=policy.component.js.map

@@ -7,7 +7,7 @@
     <ul>
       <li>policyNumber primaryInsured effectiveDate </li>
       <li *ngFor="let policy of policies">
-      {{policy?.policyNumber}} {{policy?.primaryInsured.familyName}} {{policy?.effectiveDate}} {{policy?.expirationDate}}
+        <a [routerLink]="['/policy', policy.policyNumber]">{{policy?.policyNumber}} {{policy?.primaryInsured.familyName}} {{policy?.effectiveDate}} {{policy?.expirationDate}}</a>
       </li>
     </ul>
   </div>

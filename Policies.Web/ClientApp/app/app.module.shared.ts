@@ -24,7 +24,7 @@ export const sharedConfig: NgModule = {
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
       { path: 'policies', component: PolicyListComponent },
-      { path: 'policy', component: PolicyComponent },
+      { path: 'policy/:id', component: PolicyComponent },
       { path: '**', redirectTo: 'home' }
     ])
   ]
