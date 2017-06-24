@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'policy',
   template: require('./policy.component.html'),
+  styles: [require('./policy.component.css')],
   providers: [PolicyService]
 })
 export class PolicyComponent {

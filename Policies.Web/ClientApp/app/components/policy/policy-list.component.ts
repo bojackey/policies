@@ -5,6 +5,7 @@ import { PolicyService } from './policy.service';
 @Component({
   selector: 'policy-list',
   template: require('./policy-list.component.html'),
+  styles: [require('./policy-list.component.css')],
   providers: [PolicyService]
 })
 export class PolicyListComponent {

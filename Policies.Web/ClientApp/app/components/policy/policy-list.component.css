@@ -1,2 +1,29 @@
-﻿body {
+﻿
+.panel {
+    margin-top: 1em;
+}
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    text-align: center;
+    border: 1px solid black;
+}
+
+table {
+    width: 100%;
+}
+
+thead {
+    font-weight: bold;
+}
+
+tbody {
+    font-weight: normal;
+    width: 25%;
+}
+
+span {
+    margin: 1em;
 }

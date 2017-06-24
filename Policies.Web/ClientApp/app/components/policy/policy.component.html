@@ -1,22 +1,35 @@
 ﻿<div class="panel panel-info">
   <div class="panel-heading">
     Policy #{{policy?.policyNumber}}
-    <div>Effective Date: {{policy?.effectiveDate}}</div>
-    <div>Expiration Date: {{policy?.expirationDate}}</div>
   </div>
-  <div class="panel-body" id="insured-detail">
-    <div>Primary Insured: </div>
+  <div class="panel-body">
+    <table>
+      <tr>
+        <td class="insured-caption">Effective Date:</td>
+        <td>{{policy?.effectiveDate | date: 'MM/dd/yyyy'}}</td>
+      </tr>
+      <tr>
+        <td class="insured-caption">Expiration Date:</td>
+        <td>{{policy?.expirationDate | date: 'MM/dd/yyyy'}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="panel-body">
+    <div class="insured-caption">Primary Insured:</div>
     <div>{{policy?.primaryInsured?.givenName}} {{policy?.primaryInsured?.familyName}}</div>
     <div>{{policy?.primaryInsured?.streetAddress}}</div>
     <div>{{policy?.primaryInsured?.city}}</div>
     <div>{{policy?.primaryInsured?.state}} {{policy?.primaryInsured?.zip}}</div>
   </div>
+
   <div class="panel-body" id="risk-detail">
-    <!--{{policy?.risk?.riskTypeNames}}-->
-    <div>Risk: </div>
-    <div>{{policy?.risk?.riskTypeName}} constructed in {{policy?.risk?.yearBuilt}}</div>
+    <div class="insured-caption">Risk: </div>
+    <div>{{policy?.risk?.construction}} constructed in {{policy?.risk?.yearBuilt | date: 'yyyy'}}</div>
     <div>{{policy?.risk?.streetAddress}}</div>
     <div>{{policy?.risk?.city}}</div>
     <div>{{policy?.risk?.state}} {{policy?.risk?.zip}}</div>
   </div>
-</div>
+  <div class="panel-body">
+    <a [routerLink]="['/policies']">All Policies</a>
+  </div>

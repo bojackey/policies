@@ -41,6 +41,7 @@ PolicyComponent = __decorate([
     core_1.Component({
         selector: 'policy',
         template: require('./policy.component.html'),
+        styles: [require('./policy.component.css')],
         providers: [policy_service_1.PolicyService]
     }),
     __metadata("design:paramtypes", [policy_service_1.PolicyService, router_1.ActivatedRoute])

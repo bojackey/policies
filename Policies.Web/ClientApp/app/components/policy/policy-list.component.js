@@ -30,6 +30,7 @@ PolicyListComponent = __decorate([
     core_1.Component({
         selector: 'policy-list',
         template: require('./policy-list.component.html'),
+        styles: [require('./policy-list.component.css')],
         providers: [policy_service_1.PolicyService]
     }),
     __metadata("design:paramtypes", [policy_service_1.PolicyService])

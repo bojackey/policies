@@ -3,12 +3,19 @@
     All Policies
   </div>
   <div class="panel-body">
-    {{policies?.length}} policies
-    <ul>
-      <li>policyNumber primaryInsured effectiveDate </li>
-      <li *ngFor="let policy of policies">
-        <a [routerLink]="['/policy', policy.policyNumber]">{{policy?.policyNumber}} {{policy?.primaryInsured.familyName}} {{policy?.effectiveDate}} {{policy?.expirationDate}}</a>
-      </li>
-    </ul>
+    <h3>{{policies?.length}} policies</h3>
+    <table>
+      <thead><tr><td>Policy Number</td><td>Insured</td><td>Effective Date</td><td>Expiration Date</td></tr></thead>
+      <tbody>
+        <tr *ngFor="let policy of policies">
+          <td>
+            <a [routerLink]="['/policy', policy.policyNumber]">{{policy?.policyNumber}}</a>
+          </td>
+          <td>{{policy?.primaryInsured.familyName}}</td>
+          <td>{{policy?.effectiveDate | date: 'MM/dd/yyyy'}}</td>
+          <td>{{policy?.expirationDate | date: 'MM/dd/yyyy'}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
