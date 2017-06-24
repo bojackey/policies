@@ -10,4 +10,10 @@ var Construction;
     Construction[Construction["ManufacturedHome"] = 4] = "ManufacturedHome";
     Construction[Construction["DoubleWideManufacturedHome"] = 5] = "DoubleWideManufacturedHome";
 })(Construction = exports.Construction || (exports.Construction = {}));
+var Risk = (function () {
+    function Risk() {
+    }
+    return Risk;
+}());
+exports.Risk = Risk;
 //# sourceMappingURL=policy.js.map

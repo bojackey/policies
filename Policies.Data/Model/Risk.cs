@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Policies.Data.Model
 {
@@ -11,6 +8,13 @@ namespace Policies.Data.Model
         [Key]
         public int Id { get; set; }
         public Construction construction { get; set; }
+        public string constructionName
+        {
+            get
+            {
+                return construction.Name();
+            }
+        }
         public DateTime yearBuilt { get; set; }
         public string streetAddress { get; set; }
         public string city { get; set; }

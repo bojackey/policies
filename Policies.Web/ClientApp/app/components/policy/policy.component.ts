@@ -21,9 +21,9 @@ export class PolicyComponent {
 
   getPolicy(id) {
     this.policyService.getPolicy(id)
-    .then((policy: Policy) => {
-      this.policy = policy;
-    })
+      .then((policy: Policy) => {
+        this.policy = policy;
+      })
     .catch((error) => console.error(error));
   }
 

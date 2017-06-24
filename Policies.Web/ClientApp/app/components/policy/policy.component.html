@@ -25,11 +25,12 @@
 
   <div class="panel-body" id="risk-detail">
     <div class="insured-caption">Risk: </div>
-    <div>{{policy?.risk?.construction}} constructed in {{policy?.risk?.yearBuilt | date: 'yyyy'}}</div>
+    <div>{{policy?.risk?.constructionName}} constructed in {{policy?.risk?.yearBuilt | date: 'yyyy'}}</div>
     <div>{{policy?.risk?.streetAddress}}</div>
     <div>{{policy?.risk?.city}}</div>
     <div>{{policy?.risk?.state}} {{policy?.risk?.zip}}</div>
   </div>
   <div class="panel-body">
     <a [routerLink]="['/policies']">All Policies</a>
+  </div>
   </div>
