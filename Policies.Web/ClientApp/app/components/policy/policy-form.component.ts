@@ -15,11 +15,15 @@ export class PolicyFormComponent {
   public errorMessage;
 
   constructor(public policyService: PolicyService) {
+    this.policy.risk = new Risk();
+    this.policy.primaryInsured = new PrimaryInsured();
   }
 
   putPolicy() {
-    this.policyService.putPolicy(this.policy)
-      .then(result => console.log(result))
-      .catch((error) => console.error(error));
+    console.log(this.policy);
+    return;
+    //this.policyService.putPolicy(this.policy)
+    //  .then(result => console.log(result))
+    //  .catch((error) => console.error(error));
   }
 }

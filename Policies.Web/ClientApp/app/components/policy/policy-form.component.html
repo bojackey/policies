@@ -1,28 +1,57 @@
-﻿<form novalidate #f="ngForm">
-</form>
-  <!--<div class="panel panel-body">
-  </div>-->
-<!--<div class="panel-body">
-      <p>
-        <label class="insured-caption">Effective Date:</label>
-        <input type="date" formControlName="policy.effectiveDate" />
-      </p>
+﻿<div class="panel-group panel-info">
+  <div class="panel-heading">
+    Add Policy
+  </div>
+  <form #f="ngForm">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <p>
+          <label>Effective Date:</label>
+          <input type="date" name="effectiveDate" [ngModel]="policy.effectiveDate" />
+        </p>
 
-  <p>
-    <label class="insured-caption">Expiration Date:</label>
-    <input type="date" formControlName="policy.expirationDate" />
-  </p>
-</div>-->
+        <p>
+          <label>Expiration Date:</label>
+          <input type="date" name="expirationDate" [ngModel]="policy.expirationDate" />
+        </p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Insured
+      </div>
+      <div class="panel-body">
+        <p>
+          <label>Given Name</label>
+          <input type="text" name="givenName" [ngModel]="policy.primaryInsured.givenName" />
+          <label>Family Name</label>
+          <input type="text" name="familyName" [ngModel]="policy.primaryInsured.familyName" />
+        </p>
+        <p>
+          <label>Street</label>
+          <input type="text" name="streetAddress" [ngModel]="policy.primaryInsured.streetAddress" />
+          <label>City</label>
+          <input type="text" name="city" [ngModel]="policy.primaryInsured.city" />
+          <label>State</label>
+          <input type="text" name="city" [ngModel]="policy.primaryInsured.city" />
+          <label>Zip</label>
+          <input type="number" name="zip" [ngModel]="policy.primaryInsured.zip" />
+        </p>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Risk
+      </div>
+    </div>
+  </form>
+</div>
 <!--<div class="panel-body">
-  <div class="insured-caption">Primary Insured:</div>
-  <p>{{policy?.primaryInsured?.givenName}} {{policy?.primaryInsured?.familyName}}</p>
-  <p>{{policy?.primaryInsured?.streetAddress}}</p>
-  <p>{{policy?.primaryInsured?.city}}</p>
-  <p>{{policy?.primaryInsured?.state}} {{policy?.primaryInsured?.zip}}</p>
+  <div>Primary Insured:</div>
 </div>
 
 <div class="panel-body" id="risk-detail">
-  <div class="insured-caption">Risk: </div>
+  <div>Risk: </div>
   <p>{{policy?.risk?.constructionName}} constructed in {{policy?.risk?.yearBuilt | date: 'yyyy'}}</p>
   <p>{{policy?.risk?.streetAddress}}</p>
   <p>{{policy?.risk?.city}}</p>
@@ -33,5 +62,4 @@
   <p>
     <button type="submit" [disabled]="!form.valid">Add Policy</button>
   </p>
-  <p><a [routerLink]="['/policies']">All Policies</a></p>
 </div>-->

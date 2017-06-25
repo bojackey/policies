@@ -74,7 +74,7 @@ namespace Policies.Data.Migrations
 
                     b.Property<string>("streetAddress");
 
-                    b.Property<DateTime>("yearBuilt");
+                    b.Property<int>("yearBuilt");
 
                     b.Property<string>("zip");
 

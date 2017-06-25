@@ -32,7 +32,7 @@ namespace Policies.Data.Infrastructure
                         streetAddress = "18100 Von Karman",
                         zip = "92612",
                         construction = Construction.ModularHome,
-                        yearBuilt = new DateTime(2001, 1, 1)
+                        yearBuilt = 2001
                     },
                     primaryInsured = new Insured
                     {
@@ -55,7 +55,7 @@ namespace Policies.Data.Infrastructure
                         streetAddress = "#1 Spectrum Drive",
                         zip = "92618",
                         construction = Construction.SingleWide,
-                        yearBuilt = new DateTime(2001, 1, 1)
+                        yearBuilt = 2002
                     },
                     primaryInsured = new Insured
                     {

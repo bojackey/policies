@@ -37,7 +37,7 @@ namespace Policies.Data.Migrations
                     construction = table.Column<int>(nullable: false),
                     state = table.Column<string>(nullable: true),
                     streetAddress = table.Column<string>(nullable: true),
-                    yearBuilt = table.Column<DateTime>(nullable: false),
+                    yearBuilt = table.Column<int>(nullable: false),
                     zip = table.Column<string>(nullable: true)
                 },
                 constraints: table =>

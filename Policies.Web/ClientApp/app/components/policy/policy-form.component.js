@@ -16,11 +16,15 @@ var PolicyFormComponent = (function () {
     function PolicyFormComponent(policyService) {
         this.policyService = policyService;
         this.policy = new policy_1.Policy();
+        this.policy.risk = new policy_1.Risk();
+        this.policy.primaryInsured = new policy_1.PrimaryInsured();
     }
     PolicyFormComponent.prototype.putPolicy = function () {
-        this.policyService.putPolicy(this.policy)
-            .then(function (result) { return console.log(result); })
-            .catch(function (error) { return console.error(error); });
+        console.log(this.policy);
+        return;
+        //this.policyService.putPolicy(this.policy)
+        //  .then(result => console.log(result))
+        //  .catch((error) => console.error(error));
     };
     return PolicyFormComponent;
 }());

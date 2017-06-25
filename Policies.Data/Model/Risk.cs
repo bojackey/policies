@@ -15,7 +15,7 @@ namespace Policies.Data.Model
                 return construction.Name();
             }
         }
-        public DateTime yearBuilt { get; set; }
+        public int yearBuilt { get; set; }
         public string streetAddress { get; set; }
         public string city { get; set; }
         public string state { get; set; }

@@ -2,8 +2,22 @@
     font-weight: bold;
 }
 
-.panel {
+.panel, .panel-group {
     margin-top: 1em;
+}
+
+label {
+    text-align: right;
+    width: 11%;
+}
+
+input[type=date] {
+    width: 12%;
+}
+
+input {
+    width: 10%;
+    margin-right: 2%;
 }
 
 td {

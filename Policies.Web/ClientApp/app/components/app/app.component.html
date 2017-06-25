@@ -1,3 +1,7 @@
-<div class='container'>
+<div class="panel-group panel-info">
   <router-outlet></router-outlet>
+  <div class="panel-body">
+    <a [routerLink]="['/policies']">All Policies</a>&nbsp;
+    <a [routerLink]="['/add-policy']">Add Policy</a>
+  </div>
 </div>
