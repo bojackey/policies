@@ -12,12 +12,12 @@ label {
 }
 
 input[type=date] {
-    width: 12%;
+    width: 8%;
 }
 
 input {
     width: 10%;
-    margin-right: 2%;
+    margin-right: 0.25%;
 }
 
 td {

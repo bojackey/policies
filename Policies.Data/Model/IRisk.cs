@@ -27,6 +27,7 @@ namespace Policies.Data.Model
         int Id { get; set; }
         Construction construction { get; set; }
         string constructionName { get; }
+        string[] constructionNames { get; }
         int yearBuilt { get; set; }
         string streetAddress { get; set; }
         string city { get; set; }

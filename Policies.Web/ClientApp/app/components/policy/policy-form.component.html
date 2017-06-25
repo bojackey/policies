@@ -6,12 +6,12 @@
     <div class="panel panel-default">
       <div class="panel-body">
         <p>
-          <label>Effective Date:</label>
+          <label>Effective Date</label>
           <input type="date" name="effectiveDate" [ngModel]="policy.effectiveDate" />
         </p>
 
         <p>
-          <label>Expiration Date:</label>
+          <label>Expiration Date</label>
           <input type="date" name="expirationDate" [ngModel]="policy.expirationDate" />
         </p>
       </div>
@@ -29,13 +29,13 @@
         </p>
         <p>
           <label>Street</label>
-          <input type="text" name="streetAddress" [ngModel]="policy.primaryInsured.streetAddress" />
+          <input type="text" name="insuredStreetAddress" [ngModel]="policy.primaryInsured.streetAddress" />
           <label>City</label>
-          <input type="text" name="city" [ngModel]="policy.primaryInsured.city" />
+          <input type="text" name="insuredCity" [ngModel]="policy.primaryInsured.city" />
           <label>State</label>
-          <input type="text" name="city" [ngModel]="policy.primaryInsured.city" />
+          <input type="text" name="insuredState" [ngModel]="policy.primaryInsured.state" />
           <label>Zip</label>
-          <input type="number" name="zip" [ngModel]="policy.primaryInsured.zip" />
+          <input type="number" name="insuredZip" [ngModel]="policy.primaryInsured.zip" />
         </p>
       </div>
     </div>
@@ -43,7 +43,25 @@
       <div class="panel-heading">
         Risk
       </div>
-    </div>
+      <div class="panel-body">
+        <p>
+          <label>Construction</label>
+          <input type="text" name="constructionName" [ngModel]="policy.risk.constructionName" />
+          <label>Year Built</label>
+          <input type="text" name="yearBuilt" [ngModel]="policy.risk.yearBuilt" />
+        </p>
+        <p>
+          <label>Street</label>
+          <input type="text" name="riskStreetAddress" [ngModel]="policy.risk.streetAddress" />
+          <label>City</label>
+          <input type="text" name="riskCity" [ngModel]="policy.risk.city" />
+          <label>State</label>
+          <input type="text" name="riskState" [ngModel]="policy.risk.state" />
+          <label>Zip</label>
+          <input type="number" name="riskZip" [ngModel]="policy.risk.zip" />
+        </p>
+      </div>
+      </div>
   </form>
 </div>
 <!--<div class="panel-body">
