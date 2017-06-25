@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-using Policies.Data;
 using Policies.Data.Infrastructure;
 using Policies.Data.Model;
 
@@ -22,21 +21,21 @@ namespace Policies.Controllers
             this.policyRepository = policyRepository;
         }
 
-        // GET: api/values
+        // GET: api/policy
         [HttpGet]
         public IEnumerable<IPolicy> Get()
         {
             return policyRepository.Get();
         }
 
-        // GET api/values/5
+        // GET api/policy/5
         [HttpGet("{id}")]
         public IPolicy Get(int id)
         {
             return policyRepository.Get(id);
         }
 
-        // PUT api/values
+        // PUT api/policy
         [HttpPut()]
         public void Put(IPolicy policy)
         {

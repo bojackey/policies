@@ -14,7 +14,7 @@ namespace Policies.Data
             Type enumType = typeof(T);
 
             if (enumType.GetTypeInfo().BaseType != typeof(Enum))
-                throw new ArgumentException("T is not System.Enum");
+                return new string[] { };
                     
             var values = Enum.GetValues(enumType);
             string[] names = new string[values.Length];
@@ -24,6 +24,17 @@ namespace Policies.Data
                 names[Convert.ToInt32(v)] = Name(v);
             }
             return names;
+        }
+
+        public static int[] GetEnumValues<T>()
+        {
+            Type enumType = typeof(T);
+
+            if (enumType.GetTypeInfo().BaseType != typeof(Enum))
+                return new int[] {};
+
+            var values = Enum.GetValues(enumType);
+            return (int[])values;
         }
 
         public static string Description(this Enum value)
