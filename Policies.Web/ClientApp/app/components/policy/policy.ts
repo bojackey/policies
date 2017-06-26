@@ -15,7 +15,6 @@ export class Risk {
   public city: string;
   public state: string;
   public zip: string;
-  public constructionName: string;
 }
 
 export class PrimaryInsured {

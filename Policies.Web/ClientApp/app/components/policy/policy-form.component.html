@@ -2,7 +2,7 @@
   <div class="panel-heading">
     Add Policy
   </div>
-  <form #f="ngForm">
+  <form #f="ngForm" (ngSubmit)="putPolicy(f.value)">
     <div class="panel panel-default">
       <div class="panel-body">
         <p>
@@ -20,7 +20,7 @@
       <div class="panel-heading">
         Insured
       </div>
-      <div class="panel-body">
+      <div class="panel-body" ngModelGroup="primaryInsured">
         <p>
           <label>Given Name</label>
           <input type="text" name="givenName" [ngModel]="policy.primaryInsured.givenName" />
@@ -29,13 +29,13 @@
         </p>
         <p>
           <label>Street</label>
-          <input type="text" name="insuredStreetAddress" [ngModel]="policy.primaryInsured.streetAddress" />
+          <input type="text" name="streetAddress" [ngModel]="policy.primaryInsured.streetAddress" />
           <label>City</label>
-          <input type="text" name="insuredCity" [ngModel]="policy.primaryInsured.city" />
+          <input type="text" name="city" [ngModel]="policy.primaryInsured.city" />
           <label>State</label>
-          <input type="text" name="insuredState" [ngModel]="policy.primaryInsured.state" />
+          <input type="text" name="state" [ngModel]="policy.primaryInsured.state" />
           <label>Zip</label>
-          <input type="number" name="insuredZip" [ngModel]="policy.primaryInsured.zip" />
+          <input type="number" name="zip" [ngModel]="policy.primaryInsured.zip" />
         </p>
       </div>
     </div>
@@ -43,41 +43,31 @@
       <div class="panel-heading">
         Risk
       </div>
-      <div class="panel-body">
+      <div class="panel-body" ngModelGroup="risk">
         <p>
           <label>Construction</label>
-          <input type="text" name="constructionName" [ngModel]="policy.risk.constructionName" />
+          <select name="construction" [(ngModel)]="policy.risk.construction">
+            <option *ngFor="let c of metadata.constructionTypes" [ngValue]="c.value">{{c.key}}</option>
+          </select>
           <label>Year Built</label>
-          <input type="text" name="yearBuilt" [ngModel]="policy.risk.yearBuilt" />
+          <input type="number" name="yearBuilt" [ngModel]="policy.risk.yearBuilt" />
         </p>
         <p>
           <label>Street</label>
-          <input type="text" name="riskStreetAddress" [ngModel]="policy.risk.streetAddress" />
+          <input type="text" name="streetAddress" [ngModel]="policy.risk.streetAddress" />
           <label>City</label>
-          <input type="text" name="riskCity" [ngModel]="policy.risk.city" />
+          <input type="text" name="city" [ngModel]="policy.risk.city" />
           <label>State</label>
-          <input type="text" name="riskState" [ngModel]="policy.risk.state" />
+          <input type="text" name="state" [ngModel]="policy.risk.state" />
           <label>Zip</label>
-          <input type="number" name="riskZip" [ngModel]="policy.risk.zip" />
+          <input type="number" name="zip" [ngModel]="policy.risk.zip" />
         </p>
       </div>
-      </div>
+    </div>
+    <div class="panel-body">
+      <p>
+        <button type="submit" [disabled]="!f.valid">Add Policy</button>
+      </p>
+    </div>
   </form>
 </div>
-<!--<div class="panel-body">
-  <div>Primary Insured:</div>
-</div>
-
-<div class="panel-body" id="risk-detail">
-  <div>Risk: </div>
-  <p>{{policy?.risk?.constructionName}} constructed in {{policy?.risk?.yearBuilt | date: 'yyyy'}}</p>
-  <p>{{policy?.risk?.streetAddress}}</p>
-  <p>{{policy?.risk?.city}}</p>
-  <p>{{policy?.risk?.state}} {{policy?.risk?.zip}}</p>
-</div>
--->
-<!--<div class="panel-body">
-  <p>
-    <button type="submit" [disabled]="!form.valid">Add Policy</button>
-  </p>
-</div>-->

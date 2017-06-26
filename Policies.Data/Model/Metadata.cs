@@ -1,15 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Policies.Data.Model
 {
     public class Metadata : IMetadata
     {
-        ConstructionTypes constructionTypes_ = new ConstructionTypes();
-        public IConstructionTypes constructionTypes
+        public List<KeyValuePair<string, int>> constructionTypes
         {
             get
             {
-                return constructionTypes_;
+                return ConstructionTypes.selections;
             }
         }
     }

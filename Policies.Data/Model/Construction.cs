@@ -5,25 +5,19 @@ using System.Text;
 
 namespace Policies.Data.Model
 {
-
-    class ConstructionTypes: IConstructionTypes
+    public enum Construction
     {
-        public int[] values
-        {
-            get
-            {
-                var values = Extensions.GetEnumValues<Construction>();
-                return values;
-            }
-        }
-
-        public string[] names
-        {
-            get
-            {
-                var names =  Extensions.GetEnumNames<Construction>();
-                return names;
-            }
-        }
+        [Display(Name = "Unknown")]
+        Unknown,
+        [Display(Name = "Site Built Home")]
+        SiteBuiltHome,
+        [Display(Name = "Modular Home")]
+        ModularHome,
+        [Display(Name = "Single Wide Home")]
+        SingleWide,
+        [Display(Name = "Manufactured Home")]
+        ManufacturedHome,
+        [Display(Name = "Double Wide Manufactured Home")]
+        DoubleWideManufacturedHome
     }
 }

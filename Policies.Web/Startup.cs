@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Policies.Data.Infrastructure;
+using Policies.Data.Model;
 
 namespace Policies
 {
@@ -31,6 +32,10 @@ namespace Policies
             services.AddPolicyRepository(Configuration.GetConnectionString("PolicyData"));
 
             services.AddMvc();
+
+            services.AddTransient<IPolicy, Policy>();
+            services.AddTransient<IRisk, Risk>();
+            services.AddTransient<IInsured, Insured>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

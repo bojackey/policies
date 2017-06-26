@@ -37,7 +37,7 @@ namespace Policies.Controllers
 
         // PUT api/policy
         [HttpPut()]
-        public void Put(IPolicy policy)
+        public void Put([FromServices] IPolicy policy)
         {
             policyRepository.Put(policy);
         }

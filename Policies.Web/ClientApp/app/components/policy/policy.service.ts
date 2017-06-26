@@ -9,27 +9,37 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class PolicyService {
-  url: string;
-  constructor(private http: Http, @Inject('ORIGIN_URL') url) {
-    this.url = url + "/api/policy/";
+  policyUrl: string;
+  metadataUrl: string;
+
+  constructor(private http: Http, @Inject('ORIGIN_URL') originUrl) {
+    this.policyUrl = originUrl + "/api/policy/";
+    this.metadataUrl = originUrl + "/api/metadata/";
+  }
+
+  getMetadata() {
+    return this.http.get(this.metadataUrl)
+      .map(response => response.json())
+      .toPromise()
+      .catch(this.handleError);
   }
 
   getPolicies() {
-    return this.http.get(this.url)
+    return this.http.get(this.policyUrl)
       .map(response => <Policy[]>response.json())
       .toPromise()
       .catch(this.handleError);
   }
 
   getPolicy(id) {
-    return this.http.get(this.url + id)
+    return this.http.get(this.policyUrl + id)
       .map(response => <Policy>response.json())
       .toPromise()
       .catch(this.handleError);
   }
 
   putPolicy(policy: Policy): Promise<any> {
-    return this.http.post(this.url, policy)
+    return this.http.put(this.policyUrl, policy)
       .toPromise()
       .catch(this.handleError);
   }

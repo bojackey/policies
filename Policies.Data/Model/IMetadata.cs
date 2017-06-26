@@ -6,6 +6,6 @@ namespace Policies.Data.Model
 {
     public interface IMetadata
     {
-        IConstructionTypes constructionTypes { get; }
+        List<KeyValuePair<string, int>> constructionTypes { get; }
     }
 }

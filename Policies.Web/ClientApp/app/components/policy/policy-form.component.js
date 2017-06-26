@@ -18,13 +18,38 @@ var PolicyFormComponent = (function () {
         this.policy = new policy_1.Policy();
         this.policy.risk = new policy_1.Risk();
         this.policy.primaryInsured = new policy_1.PrimaryInsured();
+        this.getMetadata();
     }
-    PolicyFormComponent.prototype.putPolicy = function () {
+    PolicyFormComponent.prototype.getMetadata = function () {
+        var _this = this;
+        this.policyService.getMetadata()
+            .then(function (metadata) {
+            console.log("PolicyFormComponent " + "getMetadata");
+            _this.metadata = metadata;
+            console.log("PolicyFormComponent " + metadata.constructionTypes[1].key);
+        })
+            .catch(function (error) { return console.error(error); });
+    };
+    PolicyFormComponent.prototype.putPolicy = function (policy) {
+        this.policy.effectiveDate = policy.effectiveDate;
+        this.policy.expirationDate = policy.expirationDate;
+        this.policy.primaryInsured.givenName = policy.primaryInsured.givenName;
+        this.policy.primaryInsured.familyName = policy.primaryInsured.familyName;
+        this.policy.primaryInsured.streetAddress = policy.primaryInsured.streetAddress;
+        this.policy.primaryInsured.city = policy.primaryInsured.city;
+        this.policy.primaryInsured.state = policy.primaryInsured.state;
+        this.policy.primaryInsured.zip = policy.primaryInsured.zip;
+        this.policy.risk.construction = policy.risk.construction;
+        this.policy.risk.yearBuilt = policy.risk.yearBuilt;
+        this.policy.risk.streetAddress = policy.risk.streetAddress;
+        this.policy.risk.city = policy.risk.city;
+        this.policy.risk.state = policy.risk.state;
+        this.policy.risk.zip = policy.risk.zip;
+        console.log(policy.risk.construction);
         console.log(this.policy);
-        return;
-        //this.policyService.putPolicy(this.policy)
-        //  .then(result => console.log(result))
-        //  .catch((error) => console.error(error));
+        this.policyService.putPolicy(this.policy)
+            .then(function (result) { return console.log(result); })
+            .catch(function (error) { return console.error(error); });
     };
     return PolicyFormComponent;
 }());

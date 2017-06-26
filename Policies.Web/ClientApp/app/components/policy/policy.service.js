@@ -19,24 +19,31 @@ require("rxjs/add/operator/catch");
 require("rxjs/add/operator/map");
 require("rxjs/add/operator/toPromise");
 var PolicyService = (function () {
-    function PolicyService(http, url) {
+    function PolicyService(http, originUrl) {
         this.http = http;
-        this.url = url + "/api/policy/";
+        this.policyUrl = originUrl + "/api/policy/";
+        this.metadataUrl = originUrl + "/api/metadata/";
     }
+    PolicyService.prototype.getMetadata = function () {
+        return this.http.get(this.metadataUrl)
+            .map(function (response) { return response.json(); })
+            .toPromise()
+            .catch(this.handleError);
+    };
     PolicyService.prototype.getPolicies = function () {
-        return this.http.get(this.url)
+        return this.http.get(this.policyUrl)
             .map(function (response) { return response.json(); })
             .toPromise()
             .catch(this.handleError);
     };
     PolicyService.prototype.getPolicy = function (id) {
-        return this.http.get(this.url + id)
+        return this.http.get(this.policyUrl + id)
             .map(function (response) { return response.json(); })
             .toPromise()
             .catch(this.handleError);
     };
     PolicyService.prototype.putPolicy = function (policy) {
-        return this.http.post(this.url, policy)
+        return this.http.put(this.policyUrl, policy)
             .toPromise()
             .catch(this.handleError);
     };
