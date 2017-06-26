@@ -11,7 +11,7 @@
           <td>
             <a [routerLink]="['/policy', policy.policyNumber]">{{policy?.policyNumber}}</a>
           </td>
-          <td>{{policy?.primaryInsured.familyName}}</td>
+          <td>{{policy?.primaryInsured.givenName}} {{policy?.primaryInsured.familyName}}</td>
           <td>{{policy?.effectiveDate | date: 'MM/dd/yyyy'}}</td>
           <td>{{policy?.expirationDate | date: 'MM/dd/yyyy'}}</td>
         </tr>

@@ -12,9 +12,28 @@ export class PolicyService {
   policyUrl: string;
   metadataUrl: string;
 
+  public metadata: any;
+
   constructor(private http: Http, @Inject('ORIGIN_URL') originUrl) {
     this.policyUrl = originUrl + "/api/policy/";
     this.metadataUrl = originUrl + "/api/metadata/";
+
+    this.getMetadata()
+      .then(metadata => {
+        console.log("PolicyFormComponent " + "getMetadata");
+        this.metadata = metadata;
+        console.log("PolicyFormComponent " + metadata.constructionTypes[1].key);
+      })
+      .catch((error) => console.error(error));
+  }
+
+  getConstructionTypeName(construction) : string {
+    var theOne = this.metadata.constructionTypes.find(
+      (kvp) => {
+        return kvp.value === construction;
+      }
+    )
+    return theOne.key;
   }
 
   getMetadata() {

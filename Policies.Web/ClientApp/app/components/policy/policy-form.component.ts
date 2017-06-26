@@ -24,9 +24,7 @@ export class PolicyFormComponent {
   getMetadata() {
     this.policyService.getMetadata()
       .then(metadata => {
-        console.log("PolicyFormComponent " + "getMetadata");
         this.metadata = metadata;
-        console.log("PolicyFormComponent " + metadata.constructionTypes[1].key);
       })
       .catch((error) => console.error(error));
   }

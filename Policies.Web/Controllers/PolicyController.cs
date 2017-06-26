@@ -42,14 +42,5 @@ namespace Policies.Controllers
             policyRepository.Put(policy);
             policyRepository.Save();
         }
-
-        // PUT api/policy
-        //[HttpPut()]
-        //public void Put(Policy policy, Risk risk, Insured insured)
-        //{
-        //    policy.primaryInsured = insured;
-        //    policy.risk = risk;
-        //    policyRepository.Put(policy);
-        //}
     }
 }

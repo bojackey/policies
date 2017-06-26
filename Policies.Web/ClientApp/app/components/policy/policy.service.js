@@ -20,10 +20,24 @@ require("rxjs/add/operator/map");
 require("rxjs/add/operator/toPromise");
 var PolicyService = (function () {
     function PolicyService(http, originUrl) {
+        var _this = this;
         this.http = http;
         this.policyUrl = originUrl + "/api/policy/";
         this.metadataUrl = originUrl + "/api/metadata/";
+        this.getMetadata()
+            .then(function (metadata) {
+            console.log("PolicyFormComponent " + "getMetadata");
+            _this.metadata = metadata;
+            console.log("PolicyFormComponent " + metadata.constructionTypes[1].key);
+        })
+            .catch(function (error) { return console.error(error); });
     }
+    PolicyService.prototype.getConstructionTypeName = function (construction) {
+        var theOne = this.metadata.constructionTypes.find(function (kvp) {
+            return kvp.value === construction;
+        });
+        return theOne.key;
+    };
     PolicyService.prototype.getMetadata = function () {
         return this.http.get(this.metadataUrl)
             .map(function (response) { return response.json(); })

@@ -24,9 +24,7 @@ var PolicyFormComponent = (function () {
         var _this = this;
         this.policyService.getMetadata()
             .then(function (metadata) {
-            console.log("PolicyFormComponent " + "getMetadata");
             _this.metadata = metadata;
-            console.log("PolicyFormComponent " + metadata.constructionTypes[1].key);
         })
             .catch(function (error) { return console.error(error); });
     };

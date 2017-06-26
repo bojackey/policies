@@ -16,12 +16,23 @@ var PolicyComponent = (function () {
     function PolicyComponent(policyService, route) {
         this.policyService = policyService;
         this.route = route;
+        this.getMetadata();
     }
+    PolicyComponent.prototype.getMetadata = function () {
+        var _this = this;
+        this.policyService.getMetadata()
+            .then(function (metadata) {
+            _this.metadata = metadata;
+            _this.getPolicy(_this.id);
+        })
+            .catch(function (error) { return console.error(error); });
+    };
     PolicyComponent.prototype.getPolicy = function (id) {
         var _this = this;
         this.policyService.getPolicy(id)
             .then(function (policy) {
             _this.policy = policy;
+            _this.constructionType = _this.policyService.getConstructionTypeName(_this.policy.risk.construction);
         })
             .catch(function (error) { return console.error(error); });
     };
@@ -29,7 +40,6 @@ var PolicyComponent = (function () {
         var _this = this;
         this.sub = this.route.params.subscribe(function (params) {
             _this.id = +params['id']; // (+) converts string 'id' to a number
-            _this.getPolicy(_this.id);
         });
     };
     PolicyComponent.prototype.ngOnDestroy = function () {
