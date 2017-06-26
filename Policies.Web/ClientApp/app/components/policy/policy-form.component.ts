@@ -32,6 +32,7 @@ export class PolicyFormComponent {
   }
 
   putPolicy(policy) {
+
     this.policy.effectiveDate = policy.effectiveDate;
     this.policy.expirationDate = policy.expirationDate;
 

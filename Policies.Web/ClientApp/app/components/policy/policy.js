@@ -11,18 +11,21 @@ var Construction;
 })(Construction = exports.Construction || (exports.Construction = {}));
 var Risk = (function () {
     function Risk() {
+        this.id = 0;
     }
     return Risk;
 }());
 exports.Risk = Risk;
 var PrimaryInsured = (function () {
     function PrimaryInsured() {
+        this.id = 0;
     }
     return PrimaryInsured;
 }());
 exports.PrimaryInsured = PrimaryInsured;
 var Policy = (function () {
     function Policy() {
+        this.policyNumber = 0;
     }
     return Policy;
 }());

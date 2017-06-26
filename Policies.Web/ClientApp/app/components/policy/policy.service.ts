@@ -1,7 +1,7 @@
 ﻿import { Injectable, Inject } from '@angular/core';
 import { Policy, PrimaryInsured, Risk, Construction } from './policy';
 
-import { Http, Response } from '@angular/http';
+import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -39,7 +39,14 @@ export class PolicyService {
   }
 
   putPolicy(policy: Policy): Promise<any> {
-    return this.http.put(this.policyUrl, policy)
+    var obj = policy;
+    //var obj = { policy: policy, risk: policy.risk, insured: policy.primaryInsured };
+
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.put(this.policyUrl, obj, options)
       .toPromise()
       .catch(this.handleError);
   }

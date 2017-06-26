@@ -43,7 +43,12 @@ var PolicyService = (function () {
             .catch(this.handleError);
     };
     PolicyService.prototype.putPolicy = function (policy) {
-        return this.http.put(this.policyUrl, policy)
+        var obj = policy;
+        //var obj = { policy: policy, risk: policy.risk, insured: policy.primaryInsured };
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        var options = new http_1.RequestOptions({ headers: headers });
+        return this.http.put(this.policyUrl, obj, options)
             .toPromise()
             .catch(this.handleError);
     };
