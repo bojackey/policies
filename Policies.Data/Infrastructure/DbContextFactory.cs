@@ -11,7 +11,8 @@ namespace Policies.Data.Infrastructure
         public PolicyContext Create(DbContextFactoryOptions options)
         {
             var builder = new DbContextOptionsBuilder<PolicyContext>();
-            builder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=Policies.Data;Trusted_Connection=True;");
+            builder.UseSqlServer(
+                "Data Source=DESKTOP-DRQJSPC\\SQLEXPRESS;Initial Catalog=Policies.Data;Integrated Security=True;");
             return new PolicyContext(builder.Options);
         }
     }

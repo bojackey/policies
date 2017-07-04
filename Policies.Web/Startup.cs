@@ -28,14 +28,14 @@ namespace Policies
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IPolicy, Policy>();
+            services.AddTransient<IRisk, Risk>();
+            services.AddTransient<IInsured, Insured>();
+
             // Add framework services.
             services.AddPolicyRepository(Configuration.GetConnectionString("PolicyData"));
 
             services.AddMvc();
-
-            services.AddTransient<IPolicy, Policy>();
-            services.AddTransient<IRisk, Risk>();
-            services.AddTransient<IInsured, Insured>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +43,7 @@ namespace Policies
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+            loggerFactory.AddFile("Logs/policies-{Date}.txt");
 
             if (env.IsDevelopment())
             {

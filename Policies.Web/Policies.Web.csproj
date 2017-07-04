@@ -17,20 +17,28 @@
     <PackageReference Include="Microsoft.NETCore.Portable.Compatibility" Version="1.0.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.1" />
+    <PackageReference Include="Serilog.Extensions.Logging.File" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
     <!-- Files not to show in IDE -->
     <None Remove="yarn.lock" />
     <Compile Remove="Models\**" />
+    <Compile Remove="PublishOutput\**" />
 
     <!-- Files not to publish (note that the 'dist' subfolders are re-added below) -->
     <Content Remove="ClientApp\**" />
     <Content Remove="Models\**" />
+    <Content Remove="PublishOutput\**" />
     <EmbeddedResource Remove="Models\**" />
+    <EmbeddedResource Remove="PublishOutput\**" />
     <None Remove="Models\**" />
+    <None Remove="PublishOutput\**" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Policies.Data\Policies.Data.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <Target Name="RunWebpack" AfterTargets="ComputeFilesToPublish">
     <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->

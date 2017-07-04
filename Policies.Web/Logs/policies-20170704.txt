@@ -1,0 +1,298 @@
+2017-07-04T11:56:16.7143870-07:00  [INF] Data Source=DESKTOP-DRQJSPC\SQLEXPRESS;Initial Catalog=Policies.Data;Integrated Security=True; (727c9d71)
+2017-07-04T11:57:41.3904485-07:00  [INF] webpack built 0ef3f2cd300b26d880b8 in 3707ms (d651079e)
+2017-07-04T11:57:42.0282020-07:00  [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (6438bdd5)
+2017-07-04T11:57:42.3355650-07:00  [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Policies] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-04T11:57:42.7395430-07:00 0HL631Q6ER496 [INF] Request starting HTTP/1.1 DEBUG http://localhost:52451/policy  0 (e5be5b71)
+2017-07-04T11:57:42.7395430-07:00 0HL631Q6ER497 [INF] Request starting HTTP/1.1 GET http://localhost:52451/policy   (e5be5b71)
+2017-07-04T11:57:42.8661921-07:00 0HL631Q6ER496 [INF] Request finished in 139.7331ms 200  (15c52c40)
+2017-07-04T11:57:43.0333896-07:00 0HL631Q6ER497 [INF] Executing action method "Policies.Controllers.HomeController.Index (Policies.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-04T11:57:44.4961179-07:00 0HL631Q6ER497 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-07-04T11:57:44.5767134-07:00 0HL631Q6ER497 [INF] User profile is available. Using '"C:\Users\larry-allen\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-07-04T11:57:46.3418543-07:00 0HL631Q6ER498 [INF] Request starting HTTP/1.1 GET http://localhost:52451/api/metadata/  0 (e5be5b71)
+2017-07-04T11:57:46.3508649-07:00 0HL631Q6ER498 [INF] Executing action method "Policies.Web.Controllers.MetaDataController.Get (Policies.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-04T11:57:46.3633795-07:00 0HL631Q6ER498 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-04T11:57:46.4134390-07:00 0HL631Q6ER498 [INF] Executed action "Policies.Web.Controllers.MetaDataController.Get (Policies.Web)" in 62.3239ms (afa2e885)
+2017-07-04T11:57:46.4204476-07:00 0HL631Q6ER498 [INF] Request finished in 75.8872ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-04T11:57:46.4224497-07:00 0HL631Q6ER497 [INF] PolicyFormComponent getMetadata (a8570c51)
+2017-07-04T11:57:46.4269547-07:00 0HL631Q6ER499 [INF] Request starting HTTP/1.1 GET http://localhost:52451/api/policy/  0 (e5be5b71)
+2017-07-04T11:57:46.4274558-07:00 0HL631Q6ER497 [INF] PolicyFormComponent Site Built Home (6b418382)
+2017-07-04T11:57:46.4309596-07:00 0HL631Q6ER499 [INF] Executing action method "Policies.Controllers.PolicyController.Get (Policies.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-04T11:57:46.4374672-07:00 0HL631Q6ER499 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-04T11:57:46.5250707-07:00 0HL631Q6ER499 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[policyNumber], [p].[effectiveDate], [p].[expirationDate], [p].[primaryInsuredId], [p].[riskId], [i].[Id], [i].[city], [i].[familyName], [i].[givenName], [i].[state], [i].[streetAddress], [i].[zip], [r].[Id], [r].[city], [r].[construction], [r].[state], [r].[streetAddress], [r].[yearBuilt], [r].[zip]
+FROM [Policies] AS [p]
+LEFT JOIN [Insureds] AS [i] ON [p].[primaryInsuredId] = [i].[Id]
+LEFT JOIN [Risks] AS [r] ON [p].[riskId] = [r].[Id] (6438bdd5)
+2017-07-04T11:57:46.6196826-07:00 0HL631Q6ER499 [INF] Executed action "Policies.Controllers.PolicyController.Get (Policies.Web)" in 189.8524ms (afa2e885)
+2017-07-04T11:57:46.6226863-07:00 0HL631Q6ER499 [INF] Request finished in 199.3038ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-04T11:57:47.5743108-07:00 0HL631Q6ER497 [INF] Executed action "Policies.Controllers.HomeController.Index (Policies.Web)" in 4556.6805ms (afa2e885)
+2017-07-04T11:57:47.5793166-07:00 0HL631Q6ER497 [INF] Request finished in 4880.4196ms 200 text/html; charset=utf-8 (15c52c40)
+2017-07-04T11:57:47.5928326-07:00 0HL631Q6ER49A [INF] Request starting HTTP/1.1 GET http://localhost:52451/dist/vendor.css?v=wBNOjKW7v9NkvHOBvaeMwwKYLmJHl7MbEQ1OnJ1LHoY   (e5be5b71)
+2017-07-04T11:57:47.6178625-07:00 0HL631Q6ER49B [INF] Request starting HTTP/1.1 GET http://localhost:52451/dist/vendor.js?v=yOOo5bj9WW4AbHb4HRTqytbuUAn04vtCFOg7Rg5fByQ   (e5be5b71)
+2017-07-04T11:57:47.6253712-07:00 0HL631Q6ER49C [INF] Request starting HTTP/1.1 GET http://localhost:52451/dist/main-client.js?v=rx1eOqobP59iHkxuGj3NI7HQb2MZhO5sbXrOXk--xt4   (e5be5b71)
+2017-07-04T11:57:47.6453947-07:00 0HL631Q6ER49A [INF] Sending file. Request path: '"/dist/vendor.css"'. Physical path: '"E:\OneDrive\Documents\Visual Studio 2017\Projects\RPS\Policies\Policies.Web\wwwroot\dist\vendor.css"' (27b0a520)
+2017-07-04T11:57:47.6719261-07:00 0HL631Q6ER49B [INF] Sending file. Request path: '"/dist/vendor.js"'. Physical path: '"E:\OneDrive\Documents\Visual Studio 2017\Projects\RPS\Policies\Policies.Web\wwwroot\dist\vendor.js"' (27b0a520)
+2017-07-04T11:57:47.6974562-07:00 0HL631Q6ER49C [INF] Request finished in 67.0011ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-07-04T11:57:47.7174799-07:00 0HL631Q6ER49A [INF] Request finished in 105.1297ms 200 text/css (15c52c40)
+2017-07-04T11:57:47.7214846-07:00 0HL631Q6ER49B [INF] Request finished in 110.7585ms 200 application/javascript (15c52c40)
+2017-07-04T11:57:48.1424819-07:00 0HL631Q6ER49D [INF] Request starting HTTP/1.1 GET http://localhost:52451/api/metadata/   (e5be5b71)
+2017-07-04T11:57:48.1459863-07:00 0HL631Q6ER49D [INF] Executing action method "Policies.Web.Controllers.MetaDataController.Get (Policies.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-04T11:57:48.1484891-07:00 0HL631Q6ER49E [INF] Request starting HTTP/1.1 GET http://localhost:52451/api/policy/   (e5be5b71)
+2017-07-04T11:57:48.1504917-07:00 0HL631Q6ER49D [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-04T11:57:48.1529944-07:00 0HL631Q6ER49D [INF] Executed action "Policies.Web.Controllers.MetaDataController.Get (Policies.Web)" in 7.3243ms (afa2e885)
+2017-07-04T11:57:48.1559980-07:00 0HL631Q6ER49D [INF] Request finished in 13.3023ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-04T11:57:48.1580004-07:00 0HL631Q6ER49E [INF] Executing action method "Policies.Controllers.PolicyController.Get (Policies.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-04T11:57:48.1600029-07:00 0HL631Q6ER49E [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-04T11:57:48.1655092-07:00 0HL631Q6ER49E [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[policyNumber], [p].[effectiveDate], [p].[expirationDate], [p].[primaryInsuredId], [p].[riskId], [i].[Id], [i].[city], [i].[familyName], [i].[givenName], [i].[state], [i].[streetAddress], [i].[zip], [r].[Id], [r].[city], [r].[construction], [r].[state], [r].[streetAddress], [r].[yearBuilt], [r].[zip]
+FROM [Policies] AS [p]
+LEFT JOIN [Insureds] AS [i] ON [p].[primaryInsuredId] = [i].[Id]
+LEFT JOIN [Risks] AS [r] ON [p].[riskId] = [r].[Id] (6438bdd5)
+2017-07-04T11:57:48.1695140-07:00 0HL631Q6ER49E [INF] Executed action "Policies.Controllers.PolicyController.Get (Policies.Web)" in 17.3177ms (afa2e885)
+2017-07-04T11:57:48.1730180-07:00 0HL631Q6ER49E [INF] Request finished in 28.9181ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-04T11:57:48.1825294-07:00 0HL631Q6ER49F [INF] Request starting HTTP/1.1 GET http://localhost:52451/__webpack_hmr   (e5be5b71)
+2017-07-04T11:57:56.6380764-07:00 0HL631Q6ER49F [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2017-07-04T11:57:56.6400783-07:00 0HL631Q6ER49F [WRN] The response has already started, the error page middleware will not be executed. (e1dd4c0d)
+2017-07-04T11:57:56.6505911-07:00 0HL631Q6ER49F [ERR] Connection id ""0HL631Q6DN2IL"": An unhandled exception was thrown by the application. (8c14976b)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware.<Invoke>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-07-04T11:57:56.6535940-07:00 0HL631Q6ER49F [INF] Request finished in 8470.0878ms 200 text/event-stream; charset=utf-8 (15c52c40)
+2017-07-04T11:58:40.6010262-07:00 0HL631Q6ER49G [INF] Request starting HTTP/1.1 GET http://localhost:52451/api/policy   (e5be5b71)
+2017-07-04T11:58:40.6025281-07:00 0HL631Q6ER49G [INF] Executing action method "Policies.Controllers.PolicyController.Get (Policies.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-04T11:58:40.6050309-07:00 0HL631Q6ER49G [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-04T11:58:40.6085351-07:00 0HL631Q6ER49G [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[policyNumber], [p].[effectiveDate], [p].[expirationDate], [p].[primaryInsuredId], [p].[riskId], [i].[Id], [i].[city], [i].[familyName], [i].[givenName], [i].[state], [i].[streetAddress], [i].[zip], [r].[Id], [r].[city], [r].[construction], [r].[state], [r].[streetAddress], [r].[yearBuilt], [r].[zip]
+FROM [Policies] AS [p]
+LEFT JOIN [Insureds] AS [i] ON [p].[primaryInsuredId] = [i].[Id]
+LEFT JOIN [Risks] AS [r] ON [p].[riskId] = [r].[Id] (6438bdd5)
+2017-07-04T11:58:40.6100379-07:00 0HL631Q6ER49G [INF] Executed action "Policies.Controllers.PolicyController.Get (Policies.Web)" in 7.6684ms (afa2e885)
+2017-07-04T11:58:40.6170457-07:00 0HL631Q6ER49G [INF] Request finished in 10.6797ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-04T11:58:50.6053505-07:00 0HL631Q6ER49H [INF] Request starting HTTP/1.1 GET http://localhost:52451/policies   (e5be5b71)
+2017-07-04T11:58:50.6103544-07:00 0HL631Q6ER49H [INF] Executing action method "Policies.Controllers.HomeController.Index (Policies.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-04T11:58:50.6148596-07:00 0HL631Q6ER49H [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-07-04T11:58:51.9123931-07:00 0HL631Q6ER49I [INF] Request starting HTTP/1.1 GET http://localhost:52451/api/metadata/  0 (e5be5b71)
+2017-07-04T11:58:51.9133949-07:00 0HL631Q6ER49J [INF] Request starting HTTP/1.1 GET http://localhost:52451/api/policy/  0 (e5be5b71)
+2017-07-04T11:58:51.9163974-07:00 0HL631Q6ER49I [INF] Executing action method "Policies.Web.Controllers.MetaDataController.Get (Policies.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-04T11:58:51.9184001-07:00 0HL631Q6ER49I [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-04T11:58:51.9199020-07:00 0HL631Q6ER49J [INF] Executing action method "Policies.Controllers.PolicyController.Get (Policies.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-04T11:58:51.9219043-07:00 0HL631Q6ER49I [INF] Executed action "Policies.Web.Controllers.MetaDataController.Get (Policies.Web)" in 6.2556ms (afa2e885)
+2017-07-04T11:58:51.9239067-07:00 0HL631Q6ER49I [INF] Request finished in 11.4776ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-04T11:58:51.9269102-07:00 0HL631Q6ER49K [INF] PolicyFormComponent getMetadata (a8570c51)
+2017-07-04T11:58:51.9304143-07:00 0HL631Q6ER49J [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-04T11:58:51.9324168-07:00 0HL631Q6ER49K [INF] PolicyFormComponent Site Built Home (6b418382)
+2017-07-04T11:58:51.9339189-07:00 0HL631Q6ER49J [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[policyNumber], [p].[effectiveDate], [p].[expirationDate], [p].[primaryInsuredId], [p].[riskId], [i].[Id], [i].[city], [i].[familyName], [i].[givenName], [i].[state], [i].[streetAddress], [i].[zip], [r].[Id], [r].[city], [r].[construction], [r].[state], [r].[streetAddress], [r].[yearBuilt], [r].[zip]
+FROM [Policies] AS [p]
+LEFT JOIN [Insureds] AS [i] ON [p].[primaryInsuredId] = [i].[Id]
+LEFT JOIN [Risks] AS [r] ON [p].[riskId] = [r].[Id] (6438bdd5)
+2017-07-04T11:58:51.9359208-07:00 0HL631Q6ER49J [INF] Executed action "Policies.Controllers.PolicyController.Get (Policies.Web)" in 20.7559ms (afa2e885)
+2017-07-04T11:58:51.9379232-07:00 0HL631Q6ER49J [INF] Request finished in 23.9915ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-04T11:58:51.9484355-07:00 0HL631Q6ER49H [INF] Executed action "Policies.Controllers.HomeController.Index (Policies.Web)" in 1340.3487ms (afa2e885)
+2017-07-04T11:58:51.9564450-07:00 0HL631Q6ER49H [INF] Request finished in 1347.529ms 200 text/html; charset=utf-8 (15c52c40)
+2017-07-04T11:58:51.9784711-07:00 0HL631Q6ER49L [INF] Request starting HTTP/1.1 GET http://localhost:52451/dist/vendor.js?v=yOOo5bj9WW4AbHb4HRTqytbuUAn04vtCFOg7Rg5fByQ   (e5be5b71)
+2017-07-04T11:58:51.9799729-07:00 0HL631Q6ER49M [INF] Request starting HTTP/1.1 GET http://localhost:52451/dist/vendor.css?v=wBNOjKW7v9NkvHOBvaeMwwKYLmJHl7MbEQ1OnJ1LHoY   (e5be5b71)
+2017-07-04T11:58:51.9824760-07:00 0HL631Q6ER49N [INF] Request starting HTTP/1.1 GET http://localhost:52451/dist/main-client.js?v=rx1eOqobP59iHkxuGj3NI7HQb2MZhO5sbXrOXk--xt4   (e5be5b71)
+2017-07-04T11:58:51.9849790-07:00 0HL631Q6ER49L [INF] The file "/dist/vendor.js" was not modified (f1f8d725)
+2017-07-04T11:58:51.9879824-07:00 0HL631Q6ER49M [INF] The file "/dist/vendor.css" was not modified (f1f8d725)
+2017-07-04T11:58:52.0125116-07:00 0HL631Q6ER49M [INF] Request finished in 44.1852ms 304 text/css (15c52c40)
+2017-07-04T11:58:52.0225230-07:00 0HL631Q6ER49N [INF] Request finished in 53.9569ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-07-04T11:58:52.0235241-07:00 0HL631Q6ER49L [INF] Request finished in 45.6839ms 304 application/javascript (15c52c40)
+2017-07-04T11:58:52.3874545-07:00 0HL631Q6ER49O [INF] Request starting HTTP/1.1 GET http://localhost:52451/api/metadata/   (e5be5b71)
+2017-07-04T11:58:52.3889563-07:00 0HL631Q6ER49P [INF] Request starting HTTP/1.1 GET http://localhost:52451/api/policy/   (e5be5b71)
+2017-07-04T11:58:52.3919598-07:00 0HL631Q6ER49P [INF] Executing action method "Policies.Controllers.PolicyController.Get (Policies.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-04T11:58:52.3924603-07:00 0HL631Q6ER49O [INF] Executing action method "Policies.Web.Controllers.MetaDataController.Get (Policies.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-04T11:58:52.4144862-07:00 0HL631Q6ER49P [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-04T11:58:52.4350104-07:00 0HL631Q6ER49O [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-04T11:58:52.4365122-07:00 0HL631Q6ER49Q [INF] Request starting HTTP/1.1 GET http://localhost:52451/__webpack_hmr   (e5be5b71)
+2017-07-04T11:58:52.4400166-07:00 0HL631Q6ER49P [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[policyNumber], [p].[effectiveDate], [p].[expirationDate], [p].[primaryInsuredId], [p].[riskId], [i].[Id], [i].[city], [i].[familyName], [i].[givenName], [i].[state], [i].[streetAddress], [i].[zip], [r].[Id], [r].[city], [r].[construction], [r].[state], [r].[streetAddress], [r].[yearBuilt], [r].[zip]
+FROM [Policies] AS [p]
+LEFT JOIN [Insureds] AS [i] ON [p].[primaryInsuredId] = [i].[Id]
+LEFT JOIN [Risks] AS [r] ON [p].[riskId] = [r].[Id] (6438bdd5)
+2017-07-04T11:58:52.4400166-07:00 0HL631Q6ER49O [INF] Executed action "Policies.Web.Controllers.MetaDataController.Get (Policies.Web)" in 47.0765ms (afa2e885)
+2017-07-04T11:58:52.4440217-07:00 0HL631Q6ER49O [INF] Request finished in 55.6073ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-04T11:58:52.4455229-07:00 0HL631Q6ER49P [INF] Executed action "Policies.Controllers.PolicyController.Get (Policies.Web)" in 51.6298ms (afa2e885)
+2017-07-04T11:58:52.4480261-07:00 0HL631Q6ER49P [INF] Request finished in 60.2258ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-04T11:59:06.5546956-07:00 0HL631Q6ER49Q [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+2017-07-04T11:59:06.5561974-07:00 0HL631Q6ER49Q [WRN] The response has already started, the error page middleware will not be executed. (e1dd4c0d)
+2017-07-04T11:59:06.5637061-07:00 0HL631Q6ER49Q [ERR] Connection id ""0HL631Q6DN2IO"": An unhandled exception was thrown by the application. (8c14976b)
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.IO.Stream.<CopyToAsyncInternal>d__27.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<PerformProxyRequest>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.SpaServices.Webpack.ConditionalProxyMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware.<Invoke>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Hosting.Internal.RequestServicesContainerMiddleware.<Invoke>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Internal.Http.Frame`1.<RequestProcessingAsync>d__2.MoveNext()
+2017-07-04T11:59:06.5652090-07:00 0HL631Q6ER49Q [INF] Request finished in 14149.5891ms 200 text/event-stream; charset=utf-8 (15c52c40)
+2017-07-04T12:15:44.1705704-07:00 0HL631Q6ER49R [INF] Request starting HTTP/1.1 GET http://localhost:52451/policies   (e5be5b71)
+2017-07-04T12:15:44.1720721-07:00 0HL631Q6ER49R [INF] Executing action method "Policies.Controllers.HomeController.Index (Policies.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-04T12:15:44.1735738-07:00 0HL631Q6ER49R [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-07-04T12:15:45.4160428-07:00 0HL631Q6ER49S [INF] Request starting HTTP/1.1 GET http://localhost:52451/api/metadata/  0 (e5be5b71)
+2017-07-04T12:15:45.4175439-07:00 0HL631Q6ER49S [INF] Executing action method "Policies.Web.Controllers.MetaDataController.Get (Policies.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-04T12:15:45.4185450-07:00 0HL631Q6ER49S [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-04T12:15:45.4200472-07:00 0HL631Q6ER49S [INF] Executed action "Policies.Web.Controllers.MetaDataController.Get (Policies.Web)" in 2.586ms (afa2e885)
+2017-07-04T12:15:45.4220493-07:00 0HL631Q6ER49S [INF] Request finished in 5.484ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-04T12:15:45.4445759-07:00 0HL631Q6ER49T [INF] Request starting HTTP/1.1 GET http://localhost:52451/api/policy/  0 (e5be5b71)
+2017-07-04T12:15:45.4450763-07:00 0HL631Q6ER49K [INF] PolicyFormComponent getMetadata (a8570c51)
+2017-07-04T12:15:45.4666020-07:00 0HL631Q6ER49K [INF] PolicyFormComponent Site Built Home (6b418382)
+2017-07-04T12:15:45.4676029-07:00 0HL631Q6ER49T [INF] Executing action method "Policies.Controllers.PolicyController.Get (Policies.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-04T12:15:45.4691048-07:00 0HL631Q6ER49T [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-04T12:15:45.4746115-07:00 0HL631Q6ER49T [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[policyNumber], [p].[effectiveDate], [p].[expirationDate], [p].[primaryInsuredId], [p].[riskId], [i].[Id], [i].[city], [i].[familyName], [i].[givenName], [i].[state], [i].[streetAddress], [i].[zip], [r].[Id], [r].[city], [r].[construction], [r].[state], [r].[streetAddress], [r].[yearBuilt], [r].[zip]
+FROM [Policies] AS [p]
+LEFT JOIN [Insureds] AS [i] ON [p].[primaryInsuredId] = [i].[Id]
+LEFT JOIN [Risks] AS [r] ON [p].[riskId] = [r].[Id] (6438bdd5)
+2017-07-04T12:15:45.4761132-07:00 0HL631Q6ER49T [INF] Executed action "Policies.Controllers.PolicyController.Get (Policies.Web)" in 29.6754ms (afa2e885)
+2017-07-04T12:15:45.4776150-07:00 0HL631Q6ER49T [INF] Request finished in 53.8231ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-04T12:15:45.4926326-07:00 0HL631Q6ER49R [INF] Executed action "Policies.Controllers.HomeController.Index (Policies.Web)" in 1319.608ms (afa2e885)
+2017-07-04T12:15:45.5046473-07:00 0HL631Q6ER49R [INF] Request finished in 1325.7696ms 200 text/html; charset=utf-8 (15c52c40)
+2017-07-04T12:15:45.5061485-07:00 0HL631Q6ER49U [INF] Request starting HTTP/1.1 GET http://localhost:52451/dist/main-client.js?v=rx1eOqobP59iHkxuGj3NI7HQb2MZhO5sbXrOXk--xt4   (e5be5b71)
+2017-07-04T12:15:46.4662831-07:00 0HL631Q6ER49V [INF] Request starting HTTP/1.1 GET http://localhost:52451/dist/vendor.css?v=wBNOjKW7v9NkvHOBvaeMwwKYLmJHl7MbEQ1OnJ1LHoY   (e5be5b71)
+2017-07-04T12:15:46.4692869-07:00 0HL631Q6ER4A0 [INF] Request starting HTTP/1.1 GET http://localhost:52451/dist/vendor.js?v=yOOo5bj9WW4AbHb4HRTqytbuUAn04vtCFOg7Rg5fByQ   (e5be5b71)
+2017-07-04T12:15:46.4888098-07:00 0HL631Q6ER49U [INF] Request finished in 982.0838ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-07-04T12:15:46.4918133-07:00 0HL631Q6ER49V [INF] The file "/dist/vendor.css" was not modified (f1f8d725)
+2017-07-04T12:15:46.4993222-07:00 0HL631Q6ER49V [INF] Request finished in 27.1111ms 304 text/css (15c52c40)
+2017-07-04T12:15:46.5023258-07:00 0HL631Q6ER4A0 [INF] The file "/dist/vendor.js" was not modified (f1f8d725)
+2017-07-04T12:15:46.5093341-07:00 0HL631Q6ER4A0 [INF] Request finished in 35.7981ms 304 application/javascript (15c52c40)
+2017-07-04T12:15:46.8832758-07:00 0HL631Q6ER4A1 [INF] Request starting HTTP/1.1 GET http://localhost:52451/api/metadata/   (e5be5b71)
+2017-07-04T12:15:46.8852786-07:00 0HL631Q6ER4A2 [INF] Request starting HTTP/1.1 GET http://localhost:52451/api/policy/   (e5be5b71)
+2017-07-04T12:15:46.9098072-07:00 0HL631Q6ER4A1 [INF] Executing action method "Policies.Web.Controllers.MetaDataController.Get (Policies.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-04T12:15:46.9113090-07:00 0HL631Q6ER4A2 [INF] Executing action method "Policies.Controllers.PolicyController.Get (Policies.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-04T12:15:46.9133121-07:00 0HL631Q6ER4A1 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-04T12:15:46.9168164-07:00 0HL631Q6ER4A2 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-04T12:15:46.9198192-07:00 0HL631Q6ER4A1 [INF] Executed action "Policies.Web.Controllers.MetaDataController.Get (Policies.Web)" in 31.7351ms (afa2e885)
+2017-07-04T12:15:46.9238243-07:00 0HL631Q6ER4A1 [INF] Request finished in 40.2891ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-04T12:15:46.9263272-07:00 0HL631Q6ER4A3 [INF] Request starting HTTP/1.1 GET http://localhost:52451/__webpack_hmr   (e5be5b71)
+2017-07-04T12:15:46.9293305-07:00 0HL631Q6ER4A2 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[policyNumber], [p].[effectiveDate], [p].[expirationDate], [p].[primaryInsuredId], [p].[riskId], [i].[Id], [i].[city], [i].[familyName], [i].[givenName], [i].[state], [i].[streetAddress], [i].[zip], [r].[Id], [r].[city], [r].[construction], [r].[state], [r].[streetAddress], [r].[yearBuilt], [r].[zip]
+FROM [Policies] AS [p]
+LEFT JOIN [Insureds] AS [i] ON [p].[primaryInsuredId] = [i].[Id]
+LEFT JOIN [Risks] AS [r] ON [p].[riskId] = [r].[Id] (6438bdd5)
+2017-07-04T12:15:46.9313330-07:00 0HL631Q6ER4A2 [INF] Executed action "Policies.Controllers.PolicyController.Get (Policies.Web)" in 43.6461ms (afa2e885)
+2017-07-04T12:15:46.9348374-07:00 0HL631Q6ER4A2 [INF] Request finished in 48.4477ms 200 application/json; charset=utf-8 (15c52c40)
