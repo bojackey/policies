@@ -1,0 +1,159 @@
+2017-07-06T11:22:36.4682791-07:00  [INF] Data Source=..\..\..\policies.db (f8f0adb9)
+2017-07-06T11:22:38.2243544-07:00  [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON; (6438bdd5)
+2017-07-06T11:22:38.2363687-07:00  [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON; (6438bdd5)
+2017-07-06T11:22:38.2593958-07:00  [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL; (6438bdd5)
+2017-07-06T11:22:38.7704997-07:00  [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON; (6438bdd5)
+2017-07-06T11:22:39.0358136-07:00  [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM "Policies" AS "p")
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (6438bdd5)
+2017-07-06T11:22:39.1609610-07:00  [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON; (6438bdd5)
+2017-07-06T11:22:39.2340471-07:00  [INF] Executed DbCommand (9ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?', @p5='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Insureds" ("city", "familyName", "givenName", "state", "streetAddress", "zip")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Insureds"
+WHERE changes() = 1 AND "Id" = last_insert_rowid(); (6438bdd5)
+2017-07-06T11:22:39.2575749-07:00  [INF] Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?', @p5='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Insureds" ("city", "familyName", "givenName", "state", "streetAddress", "zip")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Insureds"
+WHERE changes() = 1 AND "Id" = last_insert_rowid(); (6438bdd5)
+2017-07-06T11:22:39.2715919-07:00  [INF] Executed DbCommand (1ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?', @p5='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Risks" ("city", "construction", "state", "streetAddress", "yearBuilt", "zip")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Risks"
+WHERE changes() = 1 AND "Id" = last_insert_rowid(); (6438bdd5)
+2017-07-06T11:22:39.2796011-07:00  [INF] Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?', @p5='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Risks" ("city", "construction", "state", "streetAddress", "yearBuilt", "zip")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Risks"
+WHERE changes() = 1 AND "Id" = last_insert_rowid(); (6438bdd5)
+2017-07-06T11:22:39.2831052-07:00  [INF] Executed DbCommand (0ms) [Parameters=[@p6='?', @p7='?', @p8='?', @p9='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Policies" ("effectiveDate", "expirationDate", "primaryInsuredId", "riskId")
+VALUES (@p6, @p7, @p8, @p9);
+SELECT "policyNumber"
+FROM "Policies"
+WHERE changes() = 1 AND "policyNumber" = last_insert_rowid(); (6438bdd5)
+2017-07-06T11:22:39.2871102-07:00  [INF] Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Policies" ("effectiveDate", "expirationDate", "primaryInsuredId", "riskId")
+VALUES (@p0, @p1, @p2, @p3);
+SELECT "policyNumber"
+FROM "Policies"
+WHERE changes() = 1 AND "policyNumber" = last_insert_rowid(); (6438bdd5)
+2017-07-06T11:22:39.6220059-07:00 0HL64JFU35J2V [INF] Request starting HTTP/1.1 DEBUG http://localhost:52451/policy  0 (e5be5b71)
+2017-07-06T11:22:39.6220059-07:00 0HL64JFU35J30 [INF] Request starting HTTP/1.1 GET http://localhost:52451/policy   (e5be5b71)
+2017-07-06T11:22:39.8037204-07:00 0HL64JFU35J2V [INF] Request finished in 188.0787ms 200  (15c52c40)
+2017-07-06T11:22:40.0069605-07:00 0HL64JFU35J30 [INF] Executing action method "Policies.Controllers.HomeController.Index (Policies.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-06T11:22:42.1039386-07:00  [INF] webpack built 0ef3f2cd300b26d880b8 in 5798ms (584227ac)
+2017-07-06T11:22:42.9939903-07:00 0HL64JFU35J30 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-07-06T11:22:43.0655748-07:00 0HL64JFU35J30 [INF] User profile is available. Using '"C:\Users\larry-allen\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-07-06T11:22:45.0743672-07:00 0HL64JFU35J31 [INF] Request starting HTTP/1.1 GET http://localhost:52451/api/metadata/  0 (e5be5b71)
+2017-07-06T11:22:45.0873824-07:00 0HL64JFU35J31 [INF] Executing action method "Policies.Web.Controllers.MetaDataController.Get (Policies.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-06T11:22:45.1069058-07:00 0HL64JFU35J31 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-06T11:22:45.1659754-07:00 0HL64JFU35J31 [INF] Executed action "Policies.Web.Controllers.MetaDataController.Get (Policies.Web)" in 78.983ms (afa2e885)
+2017-07-06T11:22:45.1774889-07:00 0HL64JFU35J31 [INF] Request finished in 99.5682ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-06T11:22:45.1819945-07:00 0HL64JFU35J30 [INF] PolicyFormComponent getMetadata (a8570c51)
+2017-07-06T11:22:45.1849978-07:00 0HL64JFU35J30 [INF] PolicyFormComponent Site Built Home (6b418382)
+2017-07-06T11:22:45.1869999-07:00 0HL64JFU35J32 [INF] Request starting HTTP/1.1 GET http://localhost:52451/api/policy/  0 (e5be5b71)
+2017-07-06T11:22:45.1920060-07:00 0HL64JFU35J32 [INF] Executing action method "Policies.Controllers.PolicyController.Get (Policies.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-06T11:22:45.1985137-07:00 0HL64JFU35J32 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-06T11:22:45.2685969-07:00 0HL64JFU35J32 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON; (6438bdd5)
+2017-07-06T11:22:45.2816123-07:00 0HL64JFU35J32 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "p"."policyNumber", "p"."effectiveDate", "p"."expirationDate", "p"."primaryInsuredId", "p"."riskId", "i"."Id", "i"."city", "i"."familyName", "i"."givenName", "i"."state", "i"."streetAddress", "i"."zip", "r"."Id", "r"."city", "r"."construction", "r"."state", "r"."streetAddress", "r"."yearBuilt", "r"."zip"
+FROM "Policies" AS "p"
+LEFT JOIN "Insureds" AS "i" ON "p"."primaryInsuredId" = "i"."Id"
+LEFT JOIN "Risks" AS "r" ON "p"."riskId" = "r"."Id" (6438bdd5)
+2017-07-06T11:22:45.3231618-07:00 0HL64JFU35J32 [INF] Executed action "Policies.Controllers.PolicyController.Get (Policies.Web)" in 132.9578ms (afa2e885)
+2017-07-06T11:22:45.3286678-07:00 0HL64JFU35J32 [INF] Request finished in 146.0082ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-06T11:22:45.5514309-07:00 0HL64JFU35J30 [INF] Executed action "Policies.Controllers.HomeController.Index (Policies.Web)" in 5580.3711ms (afa2e885)
+2017-07-06T11:22:45.5559362-07:00 0HL64JFU35J30 [INF] Request finished in 5961.0597ms 200 text/html; charset=utf-8 (15c52c40)
+2017-07-06T11:22:45.5584392-07:00 0HL64JFU35J33 [INF] Request starting HTTP/1.1 GET http://localhost:52451/dist/vendor.js?v=yOOo5bj9WW4AbHb4HRTqytbuUAn04vtCFOg7Rg5fByQ   (e5be5b71)
+2017-07-06T11:22:45.5754596-07:00 0HL64JFU35J34 [INF] Request starting HTTP/1.1 GET http://localhost:52451/dist/main-client.js?v=rx1eOqobP59iHkxuGj3NI7HQb2MZhO5sbXrOXk--xt4   (e5be5b71)
+2017-07-06T11:22:45.5784628-07:00 0HL64JFU35J35 [INF] Request starting HTTP/1.1 GET http://localhost:52451/dist/vendor.css?v=wBNOjKW7v9NkvHOBvaeMwwKYLmJHl7MbEQ1OnJ1LHoY   (e5be5b71)
+2017-07-06T11:22:45.6059952-07:00 0HL64JFU35J35 [INF] Sending file. Request path: '"/dist/vendor.css"'. Physical path: '"E:\OneDrive\Documents\Visual Studio 2017\Projects\RPS\Policies\Policies.Web\wwwroot\dist\vendor.css"' (27b0a520)
+2017-07-06T11:22:45.6175090-07:00 0HL64JFU35J33 [INF] Sending file. Request path: '"/dist/vendor.js"'. Physical path: '"E:\OneDrive\Documents\Visual Studio 2017\Projects\RPS\Policies\Policies.Web\wwwroot\dist\vendor.js"' (27b0a520)
+2017-07-06T11:22:45.6280213-07:00 0HL64JFU35J34 [INF] Request finished in 52.1085ms 200 application/javascript; charset=UTF-8 (15c52c40)
+2017-07-06T11:22:45.6475446-07:00 0HL64JFU35J35 [INF] Request finished in 61.4493ms 200 text/css (15c52c40)
+2017-07-06T11:22:45.6890937-07:00 0HL64JFU35J33 [INF] Request finished in 126.2187ms 200 application/javascript (15c52c40)
+2017-07-06T11:22:46.1596496-07:00 0HL64JFU35J36 [INF] Request starting HTTP/1.1 GET http://localhost:52451/api/metadata/   (e5be5b71)
+2017-07-06T11:22:46.1651561-07:00 0HL64JFU35J36 [INF] Executing action method "Policies.Web.Controllers.MetaDataController.Get (Policies.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-06T11:22:46.1676588-07:00 0HL64JFU35J36 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-06T11:22:46.1706628-07:00 0HL64JFU35J36 [INF] Executed action "Policies.Web.Controllers.MetaDataController.Get (Policies.Web)" in 7.1248ms (afa2e885)
+2017-07-06T11:22:46.1766699-07:00 0HL64JFU35J36 [INF] Request finished in 15.0679ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-06T11:22:46.1786721-07:00 0HL64JFU35J37 [INF] Request starting HTTP/1.1 GET http://localhost:52451/api/policy/   (e5be5b71)
+2017-07-06T11:22:46.1831773-07:00 0HL64JFU35J37 [INF] Executing action method "Policies.Controllers.PolicyController.Get (Policies.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-06T11:22:46.1861808-07:00 0HL64JFU35J37 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-06T11:22:46.1916873-07:00 0HL64JFU35J37 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON; (6438bdd5)
+2017-07-06T11:22:46.1956921-07:00 0HL64JFU35J37 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "p"."policyNumber", "p"."effectiveDate", "p"."expirationDate", "p"."primaryInsuredId", "p"."riskId", "i"."Id", "i"."city", "i"."familyName", "i"."givenName", "i"."state", "i"."streetAddress", "i"."zip", "r"."Id", "r"."city", "r"."construction", "r"."state", "r"."streetAddress", "r"."yearBuilt", "r"."zip"
+FROM "Policies" AS "p"
+LEFT JOIN "Insureds" AS "i" ON "p"."primaryInsuredId" = "i"."Id"
+LEFT JOIN "Risks" AS "r" ON "p"."riskId" = "r"."Id" (6438bdd5)
+2017-07-06T11:22:46.2237254-07:00 0HL64JFU35J37 [INF] Executed action "Policies.Controllers.PolicyController.Get (Policies.Web)" in 17.1785ms (afa2e885)
+2017-07-06T11:22:46.2552625-07:00 0HL64JFU35J37 [INF] Request finished in 47.2656ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-06T11:22:46.2587667-07:00 0HL64JFU35J38 [INF] Request starting HTTP/1.1 GET http://localhost:52451/__webpack_hmr   (e5be5b71)
+2017-07-06T11:23:25.0303358-07:00 0HL64JFU35J39 [INF] Request starting HTTP/1.1 GET http://localhost:52451/api/metadata/   (e5be5b71)
+2017-07-06T11:23:25.0318375-07:00 0HL64JFU35J39 [INF] Executing action method "Policies.Web.Controllers.MetaDataController.Get (Policies.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-06T11:23:25.0338399-07:00 0HL64JFU35J39 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-06T11:23:25.0358423-07:00 0HL64JFU35J39 [INF] Executed action "Policies.Web.Controllers.MetaDataController.Get (Policies.Web)" in 3.8121ms (afa2e885)
+2017-07-06T11:23:25.0443527-07:00 0HL64JFU35J39 [INF] Request finished in 10.1844ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-06T11:23:25.0488575-07:00 0HL64JFU35J3A [INF] Request starting HTTP/1.1 GET http://localhost:52451/api/metadata/   (e5be5b71)
+2017-07-06T11:23:25.0518612-07:00 0HL64JFU35J3A [INF] Executing action method "Policies.Web.Controllers.MetaDataController.Get (Policies.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-06T11:23:25.0538635-07:00 0HL64JFU35J3A [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-06T11:23:25.0563665-07:00 0HL64JFU35J3A [INF] Executed action "Policies.Web.Controllers.MetaDataController.Get (Policies.Web)" in 5.1659ms (afa2e885)
+2017-07-06T11:23:25.0723855-07:00 0HL64JFU35J3A [INF] Request finished in 11.562ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-06T11:23:41.8625629-07:00 0HL64JFU35J3B [INF] Request starting HTTP/1.1 PUT http://localhost:52451/api/policy/ application/json 493 (e5be5b71)
+2017-07-06T11:23:41.9501660-07:00 0HL64JFU35J3B [INF] Executing action method "Policies.Controllers.PolicyController.Put (Policies.Web)" with arguments (["Policies.Data.Model.Policy"]) - ModelState is Valid (ba7f4ac2)
+2017-07-06T11:23:41.9531695-07:00 0HL64JFU35J3B [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON; (6438bdd5)
+2017-07-06T11:23:41.9696897-07:00 0HL64JFU35J3B [INF] Executed DbCommand (11ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?', @p5='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Insureds" ("city", "familyName", "givenName", "state", "streetAddress", "zip")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Insureds"
+WHERE changes() = 1 AND "Id" = last_insert_rowid(); (6438bdd5)
+2017-07-06T11:23:41.9716915-07:00 0HL64JFU35J3B [INF] Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?', @p5='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Risks" ("city", "construction", "state", "streetAddress", "yearBuilt", "zip")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT "Id"
+FROM "Risks"
+WHERE changes() = 1 AND "Id" = last_insert_rowid(); (6438bdd5)
+2017-07-06T11:23:41.9756964-07:00 0HL64JFU35J3B [INF] Executed DbCommand (0ms) [Parameters=[@p6='?', @p7='?', @p8='?', @p9='?'], CommandType='Text', CommandTimeout='30']
+INSERT INTO "Policies" ("effectiveDate", "expirationDate", "primaryInsuredId", "riskId")
+VALUES (@p6, @p7, @p8, @p9);
+SELECT "policyNumber"
+FROM "Policies"
+WHERE changes() = 1 AND "policyNumber" = last_insert_rowid(); (6438bdd5)
+2017-07-06T11:23:41.9897131-07:00 0HL64JFU35J3B [INF] Executed action "Policies.Controllers.PolicyController.Put (Policies.Web)" in 122.5659ms (afa2e885)
+2017-07-06T11:23:41.9952196-07:00 0HL64JFU35J3B [INF] Request finished in 129.5953ms 200  (15c52c40)
+2017-07-06T11:23:44.0181101-07:00 0HL64JFU35J3C [INF] Request starting HTTP/1.1 GET http://localhost:52451/api/metadata/   (e5be5b71)
+2017-07-06T11:23:44.0206128-07:00 0HL64JFU35J3D [INF] Request starting HTTP/1.1 GET http://localhost:52451/api/policy/   (e5be5b71)
+2017-07-06T11:23:44.0211132-07:00 0HL64JFU35J3C [INF] Executing action method "Policies.Web.Controllers.MetaDataController.Get (Policies.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-06T11:23:44.0426388-07:00 0HL64JFU35J3C [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-06T11:23:44.0471440-07:00 0HL64JFU35J3D [INF] Executing action method "Policies.Controllers.PolicyController.Get (Policies.Web)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-07-06T11:23:44.0501479-07:00 0HL64JFU35J3C [INF] Executed action "Policies.Web.Controllers.MetaDataController.Get (Policies.Web)" in 24.7333ms (afa2e885)
+2017-07-06T11:23:44.0551537-07:00 0HL64JFU35J3C [INF] Request finished in 38.0623ms 200 application/json; charset=utf-8 (15c52c40)
+2017-07-06T11:23:44.0586578-07:00 0HL64JFU35J3D [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-07-06T11:23:44.0776803-07:00 0HL64JFU35J3D [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+PRAGMA foreign_keys=ON; (6438bdd5)
+2017-07-06T11:23:44.1182283-07:00 0HL64JFU35J3D [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT "p"."policyNumber", "p"."effectiveDate", "p"."expirationDate", "p"."primaryInsuredId", "p"."riskId", "i"."Id", "i"."city", "i"."familyName", "i"."givenName", "i"."state", "i"."streetAddress", "i"."zip", "r"."Id", "r"."city", "r"."construction", "r"."state", "r"."streetAddress", "r"."yearBuilt", "r"."zip"
+FROM "Policies" AS "p"
+LEFT JOIN "Insureds" AS "i" ON "p"."primaryInsuredId" = "i"."Id"
+LEFT JOIN "Risks" AS "r" ON "p"."riskId" = "r"."Id" (6438bdd5)
+2017-07-06T11:23:44.1317443-07:00 0HL64JFU35J3D [INF] Executed action "Policies.Controllers.PolicyController.Get (Policies.Web)" in 99.2584ms (afa2e885)
+2017-07-06T11:23:44.1447608-07:00 0HL64JFU35J3D [INF] Request finished in 114.8252ms 200 application/json; charset=utf-8 (15c52c40)

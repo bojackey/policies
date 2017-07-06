@@ -3,8 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Policies.Data;
 using Policies.Data.Infrastructure;
+using Policies.Data.Model;
 
 namespace Policies.Data.Migrations
 {
@@ -14,10 +14,9 @@ namespace Policies.Data.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .HasAnnotation("ProductVersion", "1.1.2")
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "1.1.2");
 
-            modelBuilder.Entity("Policies.Data.Insured", b =>
+            modelBuilder.Entity("Policies.Data.Model.Insured", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -39,7 +38,7 @@ namespace Policies.Data.Migrations
                     b.ToTable("Insureds");
                 });
 
-            modelBuilder.Entity("Policies.Data.Policy", b =>
+            modelBuilder.Entity("Policies.Data.Model.Policy", b =>
                 {
                     b.Property<int>("policyNumber")
                         .ValueGeneratedOnAdd();
@@ -61,7 +60,7 @@ namespace Policies.Data.Migrations
                     b.ToTable("Policies");
                 });
 
-            modelBuilder.Entity("Policies.Data.Risk", b =>
+            modelBuilder.Entity("Policies.Data.Model.Risk", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -83,13 +82,13 @@ namespace Policies.Data.Migrations
                     b.ToTable("Risks");
                 });
 
-            modelBuilder.Entity("Policies.Data.Policy", b =>
+            modelBuilder.Entity("Policies.Data.Model.Policy", b =>
                 {
-                    b.HasOne("Policies.Data.Insured", "primaryInsured")
+                    b.HasOne("Policies.Data.Model.Insured", "primaryInsured")
                         .WithMany()
                         .HasForeignKey("primaryInsuredId");
 
-                    b.HasOne("Policies.Data.Risk", "risk")
+                    b.HasOne("Policies.Data.Model.Risk", "risk")
                         .WithMany()
                         .HasForeignKey("riskId");
                 });

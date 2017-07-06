@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Policies.Data.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,7 +13,7 @@ namespace Policies.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Sqlite:Autoincrement", true),
                     city = table.Column<string>(nullable: true),
                     familyName = table.Column<string>(nullable: true),
                     givenName = table.Column<string>(nullable: true),
@@ -32,7 +31,7 @@ namespace Policies.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Sqlite:Autoincrement", true),
                     city = table.Column<string>(nullable: true),
                     construction = table.Column<int>(nullable: false),
                     state = table.Column<string>(nullable: true),
@@ -50,7 +49,7 @@ namespace Policies.Data.Migrations
                 columns: table => new
                 {
                     policyNumber = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Sqlite:Autoincrement", true),
                     effectiveDate = table.Column<DateTime>(nullable: false),
                     expirationDate = table.Column<DateTime>(nullable: false),
                     primaryInsuredId = table.Column<int>(nullable: true),

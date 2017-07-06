@@ -12,7 +12,7 @@ namespace Policies.Test
         [Theory]
         public void AddPolicy()
         {
-            var mockSet = new Mock<DbSet<PolicyContext>>();
+            //var mockSet = new Mock<DbSet<PolicyContext>>();
         }
     }
 }

@@ -11,8 +11,7 @@ namespace Policies.Data.Infrastructure
         public PolicyContext Create(DbContextFactoryOptions options)
         {
             var builder = new DbContextOptionsBuilder<PolicyContext>();
-            builder.UseSqlServer(
-                "Data Source=DESKTOP-DRQJSPC\\SQLEXPRESS;Initial Catalog=Policies.Data;Integrated Security=True;");
+            builder.UseSqlite(PolicyContext.ConnectionString);
             return new PolicyContext(builder.Options);
         }
     }

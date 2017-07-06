@@ -10,6 +10,8 @@ namespace Policies.Data.Infrastructure
 {
     public class PolicyContext : DbContext
     {
+        public static string ConnectionString { get { return "Data Source=..\\..\\..\\policies.db"; } }
+
         public PolicyContext(DbContextOptions<PolicyContext> options)
         : base(options)
         {
