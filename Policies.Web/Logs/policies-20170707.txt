@@ -1,0 +1,18 @@
+2017-07-07T07:47:28.9014857-07:00  [FTL] Application startup exception (6c57a5ba)
+Microsoft.Data.Sqlite.SqliteException: SQLite Error 14: 'unable to open database file'.
+   at Microsoft.Data.Sqlite.Interop.MarshalEx.ThrowExceptionForRC(Int32 rc, Sqlite3Handle db)
+   at Microsoft.Data.Sqlite.SqliteConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.SqliteRelationalConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.SqliteDatabaseCreator.Create()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabaseCreator.EnsureCreated()
+   at Policies.Data.Infrastructure.DbInitializer.Initialize(PolicyContext context) in E:\OneDrive\Documents\Visual Studio 2017\Projects\RPS\Policies\Policies.Data\Infrastructure\DbInitializer.cs:line 13
+   at Policies.Data.Infrastructure.PolicyRepository.Initialize() in E:\OneDrive\Documents\Visual Studio 2017\Projects\RPS\Policies\Policies.Data\Infrastructure\PolicyRepository.cs:line 61
+   at Policies.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, IPolicyRepository policyRepository) in E:\OneDrive\Documents\Visual Studio 2017\Projects\RPS\Policies\Policies.Web\Startup.cs:line 73
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2017-07-07T07:47:29.2488964-07:00 0HL658SBMRSM9 [INF] Request starting HTTP/1.1 GET http://localhost:52451/policy   (e5be5b71)
+2017-07-07T07:47:29.3390029-07:00 0HL658SBMRSM9 [INF] Request finished in 101.3492ms 500 text/html; charset=utf-8 (15c52c40)
+2017-07-07T07:47:33.0909365-07:00  [INF] webpack built 10b8cb9f0f770b060a5d in 4851ms (7ebbcaee)

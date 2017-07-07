@@ -57,7 +57,7 @@ namespace Policies.Data.Infrastructure
 
         public void Initialize()
         {
-            _log.LogInformation(context.Database.GetDbConnection().ConnectionString);
+            _log.LogDebug(context.Database.GetDbConnection().ConnectionString);
             DbInitializer.Initialize(context);
         }
     }

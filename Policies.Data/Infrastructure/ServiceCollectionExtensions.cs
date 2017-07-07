@@ -14,7 +14,7 @@ namespace Policies.Data.Infrastructure
         public static void AddPolicyRepository(this IServiceCollection services, string connectionString)
         {
             services.AddDbContext<PolicyContext>(options =>
-                options.UseSqlite(PolicyContext.ConnectionString)
+                options.UseSqlite(connectionString)
                 );
 
             services.AddScoped(typeof(IPolicyRepository), typeof(PolicyRepository));
